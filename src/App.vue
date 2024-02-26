@@ -1,29 +1,53 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <a href="mailto:iamimanma@gmail.com">Contact</a>
+    <a href="assets/Imanmachukwu_Chukwuemeka_-_Web_Developer.pdf" download
+      >Resume</a
+    >
   </nav>
   <router-view />
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/product-sans");
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+html {
+  width: fit-content;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body {
+  height: 100dvh;
+  width: 100dvw;
+  background: #fcfdfb;
+  font-family: "Inter", sans-serif;
+  //font-family: "Product Sans", sans-serif;
+  overflow-x: hidden;
 
-    &.router-link-exact-active {
-      color: #42b983;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.333vw;
+    position: fixed;
+    bottom: 2.111vw;
+
+    a {
+      text-decoration: none;
+      border-radius: 4.398vw;
+      border: 1px solid #000;
+      padding: 1.5vw 3.88vw;
+      color: #000;
+      font-size: 1.157vw;
+      font-weight: 400;
     }
   }
 }
