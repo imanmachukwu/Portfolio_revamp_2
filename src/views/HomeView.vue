@@ -16,6 +16,11 @@
     <div class="home_works">
       <div v-for="project in projects" :key="project.id" class="home_work">
         <h2 class="project_title">{{ project.data.copy[0].text }}</h2>
+        <div class="tags_container">
+          <div class="tag" v-for="(tag, index) in project.tags" :key="index">
+            {{ tag }}
+          </div>
+        </div>
         <div
           v-for="(slice, index) in project.data.body"
           :key="index"
@@ -68,6 +73,7 @@ export default {
       name: "Name",
       photo: "photo",
       projects: [],
+      //tags: [],
       //works: [],
     };
   },
@@ -100,6 +106,7 @@ export default {
 
       if (works) {
         this.projects = works;
+        //this.tags = works.tags;
         //this.title = this.project.data.copy[0].text;
         console.log(works);
       } else {
@@ -201,6 +208,26 @@ export default {
         font-weight: 400;
         line-height: normal;
         letter-spacing: -0.139vw;
+      }
+      div.tags_container {
+        padding: 2.111vw;
+        padding-bottom: 0px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 2.111vw;
+        div.tag {
+          border-radius: 3.993vw;
+          border: 0.5px solid rgba(0, 0, 0, 0.2);
+          padding: 0.574vw;
+          color: #000;
+          text-align: center;
+          font-size: 0.694vw;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.042vw;
+        }
       }
       div.image_parent_container {
         width: 100%;
