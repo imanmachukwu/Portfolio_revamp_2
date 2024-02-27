@@ -1,14 +1,10 @@
 <template>
   <div class="home">
-    <!-- <HelloWorld />
-      <div class="intro__text">
-      <h1>{{ title }}</h1>
-    </div> -->
+    <div class="loading_screen" v-if="loaded === false">
+      <span class="loader"></span>
+      <h2>Organizing Resources</h2>
+    </div>
     <div class="home_details">
-      <!-- <div class="home_details_bio">
-        <img :src="photo" class="home_details_bio_photo" />
-        <p class="home_details_bio_name">{{ name }}</p>
-      </div> -->
       <img :src="photo" class="home_details_bio_photo" />
       <h1 class="home_details_title">{{ name }}</h1>
       <p class="home_details_subtitle">{{ subtitle }}</p>
@@ -75,6 +71,7 @@ export default {
       projects: [],
       //tags: [],
       //works: [],
+      loaded: false,
     };
   },
   /* components: {
@@ -83,7 +80,7 @@ export default {
   methods: {
     async getContent() {
       const api = this.$prismic.client;
-      console.log(api);
+      //console.log(api);
       // Query the API and assign the response to "response"
       const response = await api.getSingle("homepage");
       try {
@@ -91,7 +88,7 @@ export default {
           this.subtitle = response.data.description[0].text;
           this.name = response.data.profile_name[0].text;
           this.photo = response.data.profile_photo.url;
-          console.log(response);
+          //console.log(response);
           //console.log(works);
         } else {
           console.log("Error fetching content");
@@ -106,9 +103,10 @@ export default {
 
       if (works) {
         this.projects = works;
+        this.loaded = true;
         //this.tags = works.tags;
         //this.title = this.project.data.copy[0].text;
-        console.log(works);
+        //console.log(works);
       } else {
         console.log("Error fetching content");
       }
@@ -138,6 +136,45 @@ export default {
 .home {
   width: 100dvw;
   height: 100dvh;
+  div.loading_screen {
+    width: 100dvw;
+    height: 100dvh;
+    background: #fcfdfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 4;
+    position: fixed;
+    h2 {
+      color: #000;
+      font-family: Inter;
+      font-size: 2.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.135rem;
+    }
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #000;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
   .home_details {
     width: 100%;
     height: 30%;
