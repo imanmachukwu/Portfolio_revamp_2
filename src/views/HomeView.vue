@@ -250,4 +250,63 @@ export default {
     }
   }
 }
+
+@media only screen and (max-width: 960px) {
+  .home {
+    .home_details {
+      padding-top: 3.19rem;
+      padding-left: 1.5rem;
+      img.home_details_bio_photo {
+        width: 3.875rem;
+        height: 3.875rem;
+        flex-shrink: 0;
+        top: 3.19rem;
+        left: 1.5rem;
+      }
+      h1.home_details_title {
+        color: #000;
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.09rem;
+        max-width: 10.5625rem;
+      }
+      p.home_details_subtitle {
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        font-size: 0.8125rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.04875rem;
+      }
+    }
+    .home_works {
+      .home_work {
+        h2 {
+          font-size: 1.5rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.09rem;
+        }
+        div.tags_container {
+          gap: 1.5rem;
+          padding: 1.5rem;
+          div.tag {
+            border-radius: 4.3125rem;
+            padding: 0.625rem;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.045rem;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

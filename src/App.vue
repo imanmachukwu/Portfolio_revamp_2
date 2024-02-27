@@ -51,4 +51,21 @@ body {
     }
   }
 }
+
+@media only screen and (max-width: 960px) {
+  body {
+    nav {
+      gap: 1.56rem;
+      bottom: 1.56rem;
+      a {
+        padding: 0.5rem 1rem;
+        border-radius: 4.75rem;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
 </style>
